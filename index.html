@@ -114,7 +114,7 @@ holder.appendChild(actions);const hint=document.createElement("div");hint.classN
 holder.querySelectorAll("[data-target]").forEach(t=>{t.addEventListener("dragover",e=>{e.preventDefault();t.classList.add("over")});t.addEventListener("dragleave",()=>t.classList.remove("over"));t.addEventListener("drop",e=>{e.preventDefault();t.classList.remove("over");const id=e.dataTransfer.getData("text/plain");place(key,id,t.dataset.target)});
 t.addEventListener("click",e=>{if(e.target.closest(".chip"))return;if(state.selected)place(key,state.selected,t.dataset.target)})});
 }
-function place(key,id,cat){if(!firms.some(f=>f.id===id))return;const state=states[key];if(cat==="pool")delete state.where[id];else state.where[id]=cat;state.selected=null;state.revealed=false;render(key)}
+function place(key,id,cat){if(!firms.some(f=>f.id===id))return;const state=states[key];if(cat==="pool")delete state.where[id];else state.where[id]=cat;state.selected=null;render(key)}
 go(0);
 </script>
 </body></html>
